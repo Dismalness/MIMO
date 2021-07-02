@@ -2,6 +2,8 @@ const cardSet = document.querySelectorAll(".card");
 let isFlipped = false;
 let seal = false;
 let card1, card2;
+let score = document.getElementById("number");
+let i = 0;
 
 function flip() {
     if (seal) return;
@@ -28,7 +30,9 @@ function identical() {
 function setInactive() {
     card1.removeEventListener("click", flip);
     card2.removeEventListener("click", flip);
+    i += 2;
     reset();
+    if (i == cardSet.length) gameOver();
 }
 
 //Function to flip both cards back in case they don't match
@@ -47,16 +51,20 @@ function reset() {
     [card1, card2] = [null, null];
 }
 
+function gameOver() {
+    setTimeout(() => {
+        cardSet.forEach((card) => {
+            card.classList.remove("flip");
+        });
+        window.location.reload();
+    }, 1000);
+}
 // IIFE, this runs as soon as it's defined
 (function shuffle() {
-    cardSet.forEach(card => {
+    cardSet.forEach((card) => {
         let randomPlacing = Math.floor(Math.random() * 12);
         card.style.order = randomPlacing;
     });
 })();
 
-cardSet.forEach(card => card.addEventListener("click", flip));
-
-
-
-
+cardSet.forEach((card) => card.addEventListener("click", flip));

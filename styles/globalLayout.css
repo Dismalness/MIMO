@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;600&display=swap');
+
+:root{
+  --lg: linear-gradient(-37deg, #f09377, #8a1f48, #39589b, #201f1f);
+  --bg-size: 400% 400%;
+  --bg-animation: gradient 17s ease infinite;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--lg);
+  background-size: var(--bg-size);
+  animation: var(--bg-animation);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Signika Negative', sans-serif;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

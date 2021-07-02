@@ -1,0 +1,30 @@
+@import "./globalLayout.css";
+
+.btn {
+  color: #efefef;
+  background: var(--lg);
+  background-size: var(--bg-size);
+  animation: var(--bg-animation);
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 25px;
+  margin: 25px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  outline: none;
+  border: solid 1px transparent;
+  border-radius: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+.nav {
+  height: 50%;
+  width: 320px;
+  overflow: hidden;
+  list-style: none;
+}
+
+.instructions {
+  text-align: center;
+  margin-top: 10px;
+}
